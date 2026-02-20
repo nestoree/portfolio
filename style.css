@@ -5,13 +5,17 @@
     --window-bg: rgba(10, 10, 10, 0.8);
 }
 
-* { box-sizing: border-box; cursor: crosshair; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    cursor: crosshair;
+}
 
 body {
     background-color: var(--bg);
     color: var(--green);
     font-family: 'Courier New', Courier, monospace;
-    margin: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -28,12 +32,12 @@ body {
 
 .container { width: 95%; max-width: 900px; margin: 0 auto; position: relative; z-index: 2; padding: 40px 0; }
 
-/* HEADER GLITCH */
+/* HEADER */
 header { margin-bottom: 40px; border-left: 4px solid var(--green); padding-left: 20px; }
 h1 { font-size: 2.5rem; margin: 0; text-transform: uppercase; letter-spacing: 5px; }
 
 /* NAV */
-nav ul { display: flex; gap: 20px; padding: 0; list-style: none; margin-bottom: 50px; }
+nav ul { display: flex; gap: 20px; padding: 0; list-style: none; margin-bottom: 50px; flex-wrap: wrap; }
 nav a { text-decoration: none; color: var(--green); border: 1px solid var(--green); padding: 5px 15px; font-weight: bold; transition: 0.3s; }
 nav a:hover { background: var(--green); color: var(--bg); box-shadow: 0 0 15px var(--green); }
 
@@ -42,60 +46,58 @@ nav a:hover { background: var(--green); color: var(--bg); box-shadow: 0 0 15px v
     background: var(--window-bg); border: 1px solid var(--dark-green); 
     margin-bottom: 40px; box-shadow: 10px 10px 0px rgba(0, 255, 65, 0.05);
     backdrop-filter: blur(8px);
+    width: 100%;
 }
 .window-header { background: var(--dark-green); color: var(--green); padding: 8px 15px; font-size: 0.7rem; letter-spacing: 2px; }
 .window-body { padding: 25px; }
-#contact .window-body {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    align-items: center;
-}
-#contact .repo-card {
-    position: relative;
-    padding: 20px 40px;
-    border: 1px solid var(--dark-green);
-    background: var(--window-bg);
-    cursor: pointer;
-}
 
-/* Cuadrado verde detrás */
-#contact .repo-card::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 10px;      /* separación vertical */
-    left: 10px;     /* separación horizontal */
-    background: var(--green);
-    opacity: 0.08;  /* intensidad */
-    z-index: -1;
-}
-
-/* PROFILE IMAGE */
+/* ABOUT */
 .about-content { display: flex; gap: 30px; align-items: center; }
 .profile-container { width: 500px; height: 180px; border: 1px solid var(--green); position: relative; }
 .profile-img { width: 100%; height: 100%; object-fit: cover; filter:  brightness(0.8) hue-rotate(20deg); opacity: 0.8; }
 .scan-line-img { position: absolute; top: 0; width: 100%; height: 3px; background: var(--green); box-shadow: 0 0 10px var(--green); animation: scan-photo 4s linear infinite; }
 
-/* SKILLS BARS */
+/* SKILLS */
 .skill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .skill-item span { display: block; font-size: 0.8rem; margin-bottom: 5px; }
 .bar { background: #111; border: 1px solid var(--dark-green); height: 10px; }
 .fill { background: var(--green); height: 100%; box-shadow: 0 0 8px var(--green); }
 
-/* FORM */
-#contact-form { display: grid; gap: 15px; }
-input, textarea { background: rgba(0, 255, 65, 0.02); border: 1px solid var(--dark-green); color: var(--green); padding: 12px; font-family: inherit; }
-input:focus { border-color: var(--green); outline: none; background: rgba(0, 255, 65, 0.05); }
-button { background: var(--green); color: var(--bg); border: none; padding: 15px; font-weight: bold; transition: 0.3s; }
-button:hover { background: #fff; box-shadow: 0 0 20px var(--green); }
+/* REPO CARDS */
+.repo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.repo-card { padding: 20px; border: 1px solid var(--dark-green); background: var(--window-bg); cursor: pointer; position: relative; }
+.repo-card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    left: 10px;
+    background: var(--green);
+    opacity: 0.08;
+    z-index: -1;
+}
 
+/* CONTACT CARDS */
+#contact .window-body { display: flex; flex-direction: column; gap: 25px; align-items: center; }
+#contact .repo-card { width: 100%; max-width: 300px; padding: 15px 20px; }
+
+/* FOOTER */
 .terminal-footer { text-align: center; font-size: 0.7rem; opacity: 0.5; margin-top: 60px; }
 
+/* ANIMATIONS */
 @keyframes scan-photo { 0% { top: 0; } 100% { top: 100%; } }
 
+/* MEDIA QUERIES */
 @media (max-width: 700px) {
-    .about-content, .skill-grid { flex-direction: column; grid-template-columns: 1fr; }
-    .profile-container { margin: 0 auto; }
+    header { padding-left: 10px; }
+    h1 { font-size: 1.8rem; letter-spacing: 2px; }
+    nav ul { flex-direction: column; gap: 10px; }
+    nav a { padding: 8px 12px; font-size: 0.9rem; }
+    .about-content { flex-direction: column; align-items: center; gap: 15px; }
+    .profile-container { width: 80%; max-width: 250px; height: auto; }
+    .skill-grid { display: flex; flex-direction: column; gap: 15px; }
+    .bar { height: 8px; }
+    .repo-grid { display: flex; flex-direction: column; gap: 15px; }
+    .terminal-footer { font-size: 0.6rem; margin-top: 40px; }
 }
