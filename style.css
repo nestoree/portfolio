@@ -74,7 +74,7 @@ nav a:hover { background: var(--green); color: var(--bg); box-shadow: 0 0 15px v
 
 /* PROFILE IMAGE */
 .about-content { display: flex; gap: 30px; align-items: center; }
-.profile-container { width: 300px; height: 180px; border: 1px solid var(--green); position: relative; }
+.profile-container { width: 500px; height: 180px; border: 1px solid var(--green); position: relative; }
 .profile-img { width: 100%; height: 100%; object-fit: cover; filter:  brightness(0.8) hue-rotate(20deg); opacity: 0.8; }
 .scan-line-img { position: absolute; top: 0; width: 100%; height: 3px; background: var(--green); box-shadow: 0 0 10px var(--green); animation: scan-photo 4s linear infinite; }
 
