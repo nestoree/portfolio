@@ -1,5 +1,5 @@
 // ESCRITURA TIPO TERMINAL
-const textStr = "nestore@portfolio:~ $ portfolio.sh";
+const textStr = "nestore@portfolio:~ $ ./portfolio.sh";
 let charIndex = 0;
 const typingSpeed = 55;
 
@@ -103,3 +103,4 @@ window.onload = () => {
     animate();
 };
 window.onresize = init;
+
