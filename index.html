@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas-dots"></canvas>
+    <div class="scanline"></div>
+
+    <div class="container">
+        <header>
+            <h1 id="typing-text" class="glitch" data-text=""></h1>
+            <p class="subtitle">SMR // IES EL RINCÓN // NODE_ID: 2026_NÉSTOR</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#about">01.WHOAMI</a></li>
+                <li><a href="#skills">02.SKILLS</a></li>
+                <li><a href="#github">03.GITHUB</a></li>
+                <li><a href="#contact">04.CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <section id="about" class="window">
+            <div class="window-header">LOG: whoami.sh</div>
+            <div class="window-body about-content">
+                <div class="profile-container">
+                    <img src="img/nestor.png" alt="Néstor" class="profile-img">
+                    <div class="scan-line-img"></div>
+                </div>
+                <div class="about-text">
+                    <p class="command-line">$ cat biography.txt</p>
+                    <p>Soy un entusiasta de la infraestructura y el desarrollo. Especializado en la creación de puentes entre el software Python y los sistemas Bash/Linux.</p>
+                    <p class="interest-tag">> ENFOQUE: Automatización y Ciberseguridad.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="window">
+            <div class="window-header">SPECS: system_capabilities.json</div>
+            <div class="window-body">
+                <div class="skill-grid">
+                    <div class="skill-item"><span>PYTHON</span> <div class="bar"><div class="fill" style="width: 85%"></div></div></div>
+                    <div class="skill-item"><span>BASH</span> <div class="bar"><div class="fill" style="width: 90%"></div></div></div>
+                    <div class="skill-item"><span>LINUX</span> <div class="bar"><div class="fill" style="width: 75%"></div></div></div>
+                    <div class="skill-item"><span>NETWORKING</span> <div class="bar"><div class="fill" style="width: 65%"></div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="github" class="window">
+            <div class="window-header">REPO_EXPLORER: /home/nestor/projects</div>
+            <div class="window-body">
+                <p class="command-line">$ ls -la ~/projects</p>
+                <div class="repo-grid">
+                    <div class="repo-card" onclick="window.open('https://github.com/nestoree/termsg', '_blank')">
+                        <div class="repo-top">📁 termsg</div>
+                        <p>Chat cifrado punto a punto vía terminal.</p>
+                    </div>
+                    <div class="repo-card" onclick="window.open('https://github.com/nestoree/arp_spoof', '_blank')">
+                        <div class="repo-top">📁 arp_spoof</div>
+                        <p>Herramienta de análisis y seguridad de red local.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="window">
+            <div class="window-header">COMMS: establish_link.exe</div>
+            <div class="window-body">
+                    <div class="repo-card" onclick="window.open('https://www.instagram.com/n.nestore', '_blank')">
+                        <label>INSTAGRAM</label>
+                    </div>
+                    <div class="repo-card" onclick="window.open('https://github.com/nestoree/', '_blank')">
+                        <label>GITHUB</label>
+                    </div>
+                    <div class="repo-card" onclick="window.open('mailto:nestorsolaresherdz@gmail.com', '_blank')">
+                        <label>CORREO</label>
+                    </div>
+            </div>
+        </section>
+
+        <footer class="terminal-footer">
+            <p>> KERNEL_STATUS: ACTIVE | UPTIME: 99.9% | LOC: GRAN CANARIA</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
