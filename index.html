@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTFOLIO</title>
+    <title>PORTFOLIO // NÉSTOR</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/terminal.png" type="image/x-icon">
 </head>
 <body>
     <canvas id="canvas-dots"></canvas>
     <div class="scanline"></div>
+    <div class="crt-vignette"></div>
 
     <div class="container">
         <header>
+            <div class="header-top">
+                <span class="sys-label">[ SYS_BOOT OK ]</span>
+                <span class="sys-label" id="clock"></span>
+            </div>
             <h1 id="typing-text" class="glitch" data-text=""></h1>
             <p class="subtitle">SMR // IES EL RINCÓN // NODE_ID: 2026_NÉSTOR</p>
+            <div class="header-line"></div>
         </header>
 
         <nav>
@@ -22,73 +28,196 @@
                 <li><a href="#about">01.WHOAMI</a></li>
                 <li><a href="#skills">02.SKILLS</a></li>
                 <li><a href="#github">03.REPOS</a></li>
-                <li><a href="#contact">04.CONTACT</a></li>
+                <li><a href="#certs">04.CERTS</a></li>
+                <li><a href="#contact">05.CONTACT</a></li>
             </ul>
         </nav>
 
-        <section id="about" class="window">
-            <div class="window-header">LOG: whoami.sh</div>
+        <section id="about" class="window fade-in">
+            <div class="window-header">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green-dot"></span>
+                LOG: whoami.sh
+            </div>
             <div class="window-body about-content">
                 <div class="profile-container">
                     <img src="img/nestor.jpeg" alt="Néstor" class="profile-img">
                     <div class="scan-line-img"></div>
+                    <div class="profile-corner tl"></div>
+                    <div class="profile-corner tr"></div>
+                    <div class="profile-corner bl"></div>
+                    <div class="profile-corner br"></div>
                 </div>
                 <div class="about-text">
                     <p class="command-line">$ cat biography.txt</p>
-                    <p>Estudio la infraestructura y desarrollo de los sistemas, creando soluciones que conectan aplicaciones Python con entornos Bash/Linux. Me enfoco en optimizar procesos, automatizar tareas y construir puentes eficientes entre el software y los sistemas, logrando que la tecnología funcione de manera más fluida y confiable.</p>
+                    <p>Estudio la infraestructura y desarrollo de los sistemas. Me enfoco en optimizar procesos, automatizar tareas y construir puentes eficientes entre el software y los sistemas, logrando que la tecnología funcione de manera más fluida y confiable.</p>
                     <p class="interest-tag">> ENFOQUE: Automatización y Ciberseguridad.</p>
+                    <p class="status-line"><span class="blink">▮</span> STATUS: <span class="green-text">ONLINE</span> &nbsp;|&nbsp; LOC: <span class="green-text">GRAN CANARIA</span></p>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="window">
-            <div class="window-header">SPECS: system_capabilities.json</div>
+        <section id="skills" class="window fade-in">
+            <div class="window-header">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green-dot"></span>
+                SPECS: system_capabilities.json
+            </div>
             <div class="window-body">
+                <p class="command-line">$ cat capabilities.json | jq</p>
                 <div class="skill-grid">
-                    <div class="skill-item"><span>PYTHON</span> <div class="bar"><div class="fill" style="width: 85%"></div></div></div>
-                    <div class="skill-item"><span>BASH</span> <div class="bar"><div class="fill" style="width: 90%"></div></div></div>
-                    <div class="skill-item"><span>LINUX</span> <div class="bar"><div class="fill" style="width: 75%"></div></div></div>
-                    <div class="skill-item"><span>NETWORKING</span> <div class="bar"><div class="fill" style="width: 65%"></div></div></div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>PYTHON</span><span class="skill-pct">85%</span></div>
+                        <div class="bar"><div class="fill" data-width="85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>BASH</span><span class="skill-pct">90%</span></div>
+                        <div class="bar"><div class="fill" data-width="90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>LINUX</span><span class="skill-pct">75%</span></div>
+                        <div class="bar"><div class="fill" data-width="75%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>CIBERSEGURIDAD</span><span class="skill-pct">70%</span></div>
+                        <div class="bar"><div class="fill" data-width="70%"></div></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="github" class="window">
-            <div class="window-header">REPO_EXPLORER: /home/nestor/projects</div>
+        <section id="github" class="window fade-in">
+            <div class="window-header">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green-dot"></span>
+                REPO_EXPLORER: /home/nestor/projects
+            </div>
             <div class="window-body">
                 <p class="command-line">$ ls -la ~/projects</p>
                 <div class="repo-grid">
-                    <div class="repo-card" onclick="window.open('https://github.com/nestoree/termsg', '_blank')">
-                        <div class="repo-top">📁 termsg</div>
-                        <p>Chat cifrado punto a punto vía terminal.</p>
+                    <div class="repo-card" onclick="window.open('https://github.com/nestoree/GTFOBins_SUID_Checker', '_blank')">
+                        <div class="repo-top">
+                            <span>GTFOBins_SUID_Checker</span>
+                            <span class="repo-tag">BASH</span>
+                        </div>
+                        <p>Script que enumera binarios SUID y busca su explotación en GTFOBins.</p>
+                        <div class="repo-footer">> git clone GTFOBins_SUID_Checker.git</div>
                     </div>
-                    <div class="repo-card" onclick="window.open('https://github.com/nestoree/arp_spoof', '_blank')">
-                        <div class="repo-top">📁 arp_spoof</div>
-                        <p>Herramienta de análisis y seguridad de red local.</p>
+                    <div class="repo-card" onclick="window.open('https://github.com/nestoree/magic_number_file_spoofer', '_blank')">
+                        <div class="repo-top">
+                            <span>magic_number_file_spoofer</span>
+                            <span class="repo-tag">PYTHON</span>
+                        </div>
+                        <p>Script que modifica los primeros bytes de un archivo para que el sistema lo detecte como otro tipo de archivo.</p>
+                        <div class="repo-footer">> git clone magic_number_file_spoofer.git</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="window">
-            <div class="window-header">COMMS: establish_link.exe</div>
+        <!-- CERTIFICACIONES -->
+        <section id="certs" class="window fade-in">
+            <div class="window-header">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green-dot"></span>
+                CERTS: /home/nestor/certifications
+            </div>
             <div class="window-body">
-                <div class="repo-card" onclick="window.open('https://www.linkedin.com/in/néstor-solares-hernández-116969315/', '_blank')">
-                    <label>LINKEDIN</label>
+                <p class="command-line">$ ls -la ~/certifications/</p>
+                <div class="cert-grid">
+
+                    <div class="cert-card" onclick="openLightbox('img/cert1.png', 'Asistencia al Curso de Ciberseguridad y Hacking Ético')">
+                        <div class="cert-img-wrapper">
+                            <img src="img/cert1.png" alt="Certificación 1" class="cert-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                            <div class="cert-placeholder">
+                                <span class="cert-placeholder-icon">&#127942;</span>
+                                <span>cert_01.png</span>
+                            </div>
+                            <div class="cert-scan"></div>
+                        </div>
+                        <div class="cert-info">
+                            <p class="cert-title">> Asistencia al Curso de Ciberseguridad y Hacking Ético</p>
+                            <p class="cert-desc">BIG School &middot; 2026</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" onclick="openLightbox('img/cert2.png', 'Iniciación al Desarrollo con IA')">
+                        <div class="cert-img-wrapper">
+                            <img src="img/cert2.png" alt="Certificación 2" class="cert-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                            <div class="cert-placeholder">
+                                <span class="cert-placeholder-icon">&#127942;</span>
+                                <span>cert_02.png</span>
+                            </div>
+                            <div class="cert-scan"></div>
+                        </div>
+                        <div class="cert-info">
+                            <p class="cert-title">> Iniciación al Desarrollo con IA</p>
+                            <p class="cert-desc">BIG School &middot; 2026</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" onclick="openLightbox('img/cert3.png', 'Python')">
+                        <div class="cert-img-wrapper">
+                            <img src="img/cert3.png" alt="Certificación 3" class="cert-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                            <div class="cert-placeholder">
+                                <span class="cert-placeholder-icon">&#127942;</span>
+                                <span>cert_03.png</span>
+                            </div>
+                            <div class="cert-scan"></div>
+                        </div>
+                        <div class="cert-info">
+                            <p class="cert-title">> Python</p>
+                            <p class="cert-desc">Santander &middot; 2026</p>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="repo-card" onclick="window.open('https://github.com/nestoree/', '_blank')">
-                    <label>GITHUB</label>
-                </div>
-                <div class="repo-card" onclick="window.open('mailto:nestorsolaresherdz@gmail.com', '_blank')">
-                    <label>CORREO</label>
+            </div>
+        </section>
+
+        <!-- LIGHTBOX -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <div class="lightbox-content" onclick="event.stopPropagation()">
+                <img id="lightbox-img" src="" alt="Certificación">
+                <p id="lightbox-title"></p>
+                <button class="lightbox-close" onclick="closeLightbox()">[X] CERRAR</button>
+            </div>
+        </div>
+
+        <section id="contact" class="window fade-in">
+            <div class="window-header">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green-dot"></span>
+                COMMS: establish_link.exe
+            </div>
+            <div class="window-body">
+                <p class="command-line">$ ./connect --target=human</p>
+                <div class="contact-grid">
+                    <div class="contact-card" onclick="window.open('https://www.linkedin.com/in/néstor-solares-hernández-116969315/', '_blank')">
+                        <span class="contact-icon">LI</span>
+                        <div>
+                            <p class="contact-label">LINKEDIN</p>
+                            <p class="contact-sub">néstor-solares-hernández</p>
+                        </div>
+                    </div>
+                    <div class="contact-card" onclick="window.open('https://github.com/nestoree/', '_blank')">
+                        <span class="contact-icon">GH</span>
+                        <div>
+                            <p class="contact-label">GITHUB</p>
+                            <p class="contact-sub">github.com/nestoree</p>
+                        </div>
+                    </div>
+                    <div class="contact-card" onclick="window.open('mailto:nestorsolaresherdz@gmail.com', '_blank')">
+                        <span class="contact-icon">@</span>
+                        <div>
+                            <p class="contact-label">CORREO</p>
+                            <p class="contact-sub">nestorsolaresherdz@gmail.com</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <footer class="terminal-footer">
-            <p>> KERNEL_STATUS: ACTIVE | UPTIME: 99.9% | LOC: GRAN CANARIA</p>
+            <p>> KERNEL_STATUS: <span class="green-text">ACTIVE</span> | UPTIME: 99.9% | LOC: GRAN CANARIA | <span id="footer-time"></span></p>
         </footer>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
