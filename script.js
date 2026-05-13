@@ -37,6 +37,87 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.window').forEach(w => observer.observe(w));
 
+// ── CERTIFICACIONES ──
+const CERTIFICATE_LIMIT = 30;
+const certificateData = {
+    1: {
+        title: 'Asistencia al Curso de Ciberseguridad y Hacking Ético',
+        desc: 'BIG School · 2026'
+    },
+    2: {
+        title: 'Iniciación al Desarrollo con IA',
+        desc: 'BIG School · 2026'
+    },
+    3: {
+        title: 'Python',
+        desc: 'Santander · 2026'
+    }
+};
+
+function getCertificateData(number) {
+    return certificateData[number] || {
+        title: `Certificación ${number}`,
+        desc: `cert${number}.png`
+    };
+}
+
+function createCertificateCard(number) {
+    const data = getCertificateData(number);
+    const src = `img/cert${number}.png`;
+    const card = document.createElement('div');
+    card.className = 'cert-card';
+    card.onclick = () => openLightbox(src, data.title);
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'cert-img-wrapper';
+
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = data.title;
+    img.className = 'cert-img';
+    img.onerror = () => card.remove();
+
+    const scan = document.createElement('div');
+    scan.className = 'cert-scan';
+
+    const info = document.createElement('div');
+    info.className = 'cert-info';
+
+    const title = document.createElement('p');
+    title.className = 'cert-title';
+    title.textContent = `> ${data.title}`;
+
+    const desc = document.createElement('p');
+    desc.className = 'cert-desc';
+    desc.textContent = data.desc;
+
+    wrapper.append(img, scan);
+    info.append(title, desc);
+    card.append(wrapper, info);
+
+    return card;
+}
+
+function renderAllCertificates() {
+    const grid = document.getElementById('all-cert-grid');
+    if (!grid || grid.dataset.rendered) return;
+
+    for (let i = 1; i <= CERTIFICATE_LIMIT; i++) {
+        grid.appendChild(createCertificateCard(i));
+    }
+
+    grid.dataset.rendered = 'true';
+}
+
+function openCertModal() {
+    renderAllCertificates();
+    document.getElementById('cert-modal').classList.add('open');
+}
+
+function closeCertModal() {
+    document.getElementById('cert-modal').classList.remove('open');
+}
+
 // ── LIGHTBOX ──
 function openLightbox(src, title) {
     const lb = document.getElementById('lightbox');
@@ -49,7 +130,12 @@ function openLightbox(src, title) {
 function closeLightbox() {
     document.getElementById('lightbox').classList.remove('open');
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeCertModal();
+    }
+});
 
 // ── CANVAS PARTICLES ──
 const canvas = document.getElementById('canvas-dots');
